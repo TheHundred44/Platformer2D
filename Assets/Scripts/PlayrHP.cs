@@ -1,37 +1,48 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayrHP : MonoBehaviour
 {
     private int score = 0;
 
-    private int hp = 3;
+    [SerializeField] private float hpMax = 3;
+    [SerializeField] private float hp = 3;
+    public Slider sliderHealth;
 
-    [SerializeField] private Image SpriteHealBar0;
-    [SerializeField] private Image SpriteHealBar1;
-    [SerializeField] private Image SpriteHealBar2;
-    [SerializeField] private Image SpriteHealBar3;
+    private bool _canTakeDamage = true;
+    private bool _enemyHere;
 
+    private void Start()
+    {
+        hp = hpMax;
+        sliderHealth.maxValue = hpMax;
+        sliderHealth.value = hp;
+    }
+
+    private void Update()
+    {
+        if (_enemyHere && _canTakeDamage)
+        {
+            float damage = -1;
+            HealthManager(damage);
+            Invincibility();
+        }
+    }
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            hp--;
-            OnLosingHealth();
+            _enemyHere = true;         
         }
 
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
-
-        if (other.gameObject.tag == "Heal")
+        if (other.gameObject.tag == "Health")
         {
             if (hp < 3)
             {
-                hp++;
+                float health = 1;
                 Destroy(other.gameObject);
-                OnRegainingHealth();
+                HealthManager(health);
             }
             else
             {
@@ -40,32 +51,31 @@ public class PlayrHP : MonoBehaviour
         }
     }
 
-    private void OnLosingHealth()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        switch (hp)
+        if(collision.gameObject.tag == "Enemy")
         {
-            case 2:
-                SpriteHealBar3.gameObject.SetActive(false);
-                break;
-            case 1:
-                SpriteHealBar2.gameObject.SetActive(false);
-                break;
-            case 0:
-                SpriteHealBar1.gameObject.SetActive(false);
-                break;
+            _enemyHere = false;
         }
     }
 
-    private void OnRegainingHealth()
+    private void HealthManager(float health)
     {
-        switch (hp)
+        hp += health;
+        sliderHealth.value = hp;
+
+        if (hp <= 0)
         {
-            case 3:
-                SpriteHealBar3.gameObject.SetActive(true);
-                break;
-            case 2:
-                SpriteHealBar2.gameObject.SetActive(true);
-                break;
+            Destroy(gameObject);
         }
     }
+
+    private async void Invincibility()
+    {
+        _canTakeDamage = false;
+        await Task.Delay(1500);
+        _canTakeDamage = true;
+    }
+
+    
 }

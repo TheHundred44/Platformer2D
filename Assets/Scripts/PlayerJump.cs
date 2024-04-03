@@ -18,7 +18,7 @@ public class PlayerJump : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
     }
 
-    private void OnJump()
+    public void OnJump()
     {
         if (!_isJumping)
         {

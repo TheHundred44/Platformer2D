@@ -4,12 +4,12 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyHp : MonoBehaviour
 {
-    public int _hp = 500;
+    public float _hp = 500;
 
     [SerializeField]
     private Color _damageColor;
 
-    public virtual void LowerHealth(int damage)
+    public virtual void LowerHealth(float damage)
     {
         if (_hp > 0)
         {
