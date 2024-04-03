@@ -19,6 +19,8 @@ public class PlayrHP : MonoBehaviour
     [SerializeField] private int _numberOfFlash;
     private SpriteRenderer _spriteRenderer;
 
+    public Physics2D Physics2D;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -99,7 +101,11 @@ public class PlayrHP : MonoBehaviour
         }
         _spriteRenderer.color = new Color(1,0,0,1f);
         Physics2D.IgnoreLayerCollision(6, 7, false);
-        _canTakeDamage = true;
-        
+        _canTakeDamage = true;        
+    }
+
+    public void LayerIgnore(int layer, int layer2, bool _bool)
+    {
+        Physics2D.IgnoreLayerCollision(layer, layer2, _bool);
     }
 }
