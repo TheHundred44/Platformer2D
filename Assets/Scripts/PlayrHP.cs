@@ -12,12 +12,22 @@ public class PlayrHP : MonoBehaviour
 
     private bool _canTakeDamage = true;
     private bool _enemyHere;
+    [SerializeField] private GameObject _canvaLose;
+    [SerializeField] private GameObject _canvaInGame;
+
+    [SerializeField] private int _iFrameDuration;
+    [SerializeField] private int _numberOfFlash;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         hp = hpMax;
         sliderHealth.maxValue = hpMax;
         sliderHealth.value = hp;
+
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -26,7 +36,11 @@ public class PlayrHP : MonoBehaviour
         {
             float damage = -1;
             HealthManager(damage);
-            Invincibility();
+
+            if(hp > 0)
+            {
+                Invincibility();
+            }
         }
     }
     public void OnCollisionEnter2D(Collision2D other)
@@ -67,15 +81,25 @@ public class PlayrHP : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
+            _canvaLose.SetActive(true);
         }
     }
 
     private async void Invincibility()
     {
         _canTakeDamage = false;
-        await Task.Delay(1500);
+        Physics2D.IgnoreLayerCollision(6,7, true);
+        for (int i = 0; i < _numberOfFlash; i++)
+        {
+            _spriteRenderer.color = new Color(1,0,0,0.5f);
+            await Task.Delay(600);
+            _spriteRenderer.color = Color.white;
+            await Task.Delay(600);
+        }
+        _spriteRenderer.color = new Color(1,0,0,1f);
+        Physics2D.IgnoreLayerCollision(6, 7, false);
         _canTakeDamage = true;
+        
     }
-
-    
 }
