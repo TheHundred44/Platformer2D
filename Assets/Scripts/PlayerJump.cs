@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
 
-    private BoxCollider2D _boxCollider2D;
+    public BoxCollider2D _boxCollider2D;
 
     private PlayerInput _playerInput;
 
@@ -15,7 +16,6 @@ public class PlayerJump : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
-        _boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void OnJump()
@@ -27,7 +27,7 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Sol")
         {
@@ -35,11 +35,16 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Sol")
         {
             _isJumping = true;
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);  
     }
 }
