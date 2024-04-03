@@ -9,18 +9,23 @@ public class ClickMouse : MonoBehaviour
     private float clickStartTime;
     private float clickEndTime;
 
-    private bool _isMousePressed;
+    [HideInInspector]
+    public bool _isMousePressed;
 
     public PlayerInput _playerInput;
+
+    [SerializeField]
+    private GameObject _target;
 
     private void Start()
     {
         _explosion = FindAnyObjectByType<Explosion>().GetComponent<Explosion>();
         _playerInput = FindAnyObjectByType<PlayerInput>().GetComponent<PlayerInput>();
     }
+
     private void Update()
     {
-        if(_isMousePressed)
+        if (_isMousePressed)
         {
             clickEndTime = Time.time - clickStartTime;
             if (clickEndTime > 1)
@@ -46,10 +51,12 @@ public class ClickMouse : MonoBehaviour
             _explosion.ExplosionRadius = 0.5f;
             _explosion.DamageExplosion = 50;
 
-            Vector3 clickPosition = Input.mousePosition;
-            clickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+            //Vector3 clickPosition = Input.mousePosition;
+            //clickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
 
-            _explosion.PositionExplosion = new Vector3(clickPosition.x, clickPosition.y, 0);
+            //_explosion.PositionExplosion = new Vector3(clickPosition.x, clickPosition.y, 0);
+
+            _explosion.PositionExplosion = new Vector3(_target.transform.position.x, _target.transform.position.y, 0);
             clickStartTime = Time.time;
             _isMousePressed = true;
         }
@@ -75,7 +82,7 @@ public class ClickMouse : MonoBehaviour
         {
             _explosion.ExplosionRadius = 3;
         }
-        if(_explosion.DamageExplosion > 500)
+        if (_explosion.DamageExplosion > 500)
         {
             _explosion.DamageExplosion = 500;
         }
