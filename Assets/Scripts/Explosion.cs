@@ -12,6 +12,7 @@ public class Explosion : MonoBehaviour
     public GameObject Flammes;
 
     public Vector3 PositionExplosion;
+    public float DamageExplosion = 50;
 
     public void Fire()
     {
@@ -35,6 +36,10 @@ public class Explosion : MonoBehaviour
             if(rb != null)
             {
                 rb.AddExplosionForce(ExplosionForce, explosionPosition, ExplosionRadius, UpwardsModifier);
+                if(rb.tag == "Enemy")
+                {
+                    //inflige des dégats
+                }
             }
 
         }

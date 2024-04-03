@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,7 +25,7 @@ public class ClickMouse : MonoBehaviour
 
 
 
-    public void OnExplode(InputAction.CallbackContext context)
+    public async void OnExplode(InputAction.CallbackContext context)
     {
         if (context.started)
         {
@@ -41,17 +42,21 @@ public class ClickMouse : MonoBehaviour
             _explosion.TimeDelay = 0;
             _explosion.Fire();
             _isMousePressed = false;
+            await Task.Delay(500);
         }
         if (context.performed)
         {
             clickEndTime = Time.time - clickStartTime;
+            Debug.Log(clickEndTime);
             if (clickEndTime > 1)
             {
                 _explosion.ExplosionForce *= clickEndTime;
+                _explosion.DamageExplosion *= clickEndTime;
             }
             else
             {
                 _explosion.ExplosionForce += 1;
+                _explosion.DamageExplosion += 1;
             }
             _explosion.ExplosionRadius += clickEndTime;
             VerifStrengh();
@@ -68,6 +73,10 @@ public class ClickMouse : MonoBehaviour
         if (_explosion.ExplosionRadius > 3)
         {
             _explosion.ExplosionRadius = 3;
+        }
+        if(_explosion.ExplosionForce > 500)
+        {
+            _explosion.ExplosionForce = 500;
         }
     }
 }
