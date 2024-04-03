@@ -47,6 +47,7 @@ public class ClickMouse : MonoBehaviour
     {
         if (context.started)
         {
+
             _explosion.ExplosionForce = 5;
             _explosion.ExplosionRadius = 0.5f;
             _explosion.DamageExplosion = 50;
@@ -59,6 +60,8 @@ public class ClickMouse : MonoBehaviour
             _explosion.PositionExplosion = new Vector3(_target.transform.position.x, _target.transform.position.y, 0);
             clickStartTime = Time.time;
             _isMousePressed = true;
+            _explosion.Charge();
+
         }
 
         if (context.canceled)
