@@ -9,6 +9,8 @@ public class PlayerLook : MonoBehaviour
 
     private float _sensibility = 5f;
 
+    public ClickMouse _clickMouse;
+
     private void Start()
     {
         StartCoroutine(MousePoint());
@@ -25,7 +27,10 @@ public class PlayerLook : MonoBehaviour
 
     private void FixedUpdate()
     {
-        OnLook();
+        if (!_clickMouse._isMousePressed)
+        {
+            OnLook();
+        }
     }
 
     private IEnumerator MousePoint()
