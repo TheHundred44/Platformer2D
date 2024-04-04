@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
-    public float shakeDuration = 0.1f;
-    public float shakeAmount = 0.5f; 
+    public float shakeDuration = 0.2f;
+    public float shakeAmount = 0.5f;
+
+    public bool start = false;
 
     private Vector3 originalPosition;
 
@@ -14,17 +16,41 @@ public class ScreenShake : MonoBehaviour
         originalPosition = transform.localPosition;
     }
 
-    public void Shake()
+    private void Update()
     {
-        if (shakeDuration > 0)
+        if (start)
         {
-            transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmount;
-            shakeDuration -= Time.deltaTime;
+            start = false;
+            StartCoroutine(Shaking());
         }
-        else
+    }
+
+    //public void Shake(float duration)
+    //{
+    //    if (duration > 0)
+    //    {
+    //        for (float i = duration; i>0; i -= Time.deltaTime)
+    //        {
+    //            transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmount;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        shakeDuration = 0f;
+    //        transform.localPosition = originalPosition;
+    //    }
+    //}
+
+    IEnumerator Shaking()
+    {
+        float elapsTime = 0f;
+
+        while(elapsTime < shakeDuration)
         {
-            shakeDuration = 0f;
-            transform.localPosition = originalPosition;
+            elapsTime += Time.deltaTime;
+            transform.position = originalPosition + Random.insideUnitSphere * shakeAmount;
+            yield return null;
         }
+        transform.position = originalPosition;
     }
 }

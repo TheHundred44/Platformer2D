@@ -35,10 +35,11 @@ public class ClickMouse : MonoBehaviour
             }
             else
             {
-                _explosion.ExplosionForce += 0.1f;
+                _explosion.ExplosionForce += 0.01f;
                 _explosion.DamageExplosion += 1;
             }
-            _explosion.ExplosionRadius += clickEndTime;
+            _explosion.ExplosionRadius += 0.0050f;
+            _explosion._explosionShake += 0.0033f;
             VerifStrengh();
         }
     }
@@ -51,6 +52,7 @@ public class ClickMouse : MonoBehaviour
             _explosion.ExplosionForce = 5;
             _explosion.ExplosionRadius = 0.5f;
             _explosion.DamageExplosion = 50;
+            _explosion._explosionShake = 0.1f;
 
             //Vector3 clickPosition = Input.mousePosition;
             //clickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
@@ -80,7 +82,6 @@ public class ClickMouse : MonoBehaviour
         {
             _explosion.ExplosionForce = 50;
         }
-
         if (_explosion.ExplosionRadius > 3)
         {
             _explosion.ExplosionRadius = 3;
@@ -88,6 +89,10 @@ public class ClickMouse : MonoBehaviour
         if (_explosion.DamageExplosion > 500)
         {
             _explosion.DamageExplosion = 500;
+        }
+        if(_explosion._explosionShake > 1f)
+        {
+            _explosion._explosionShake = 1f;
         }
     }
 }
