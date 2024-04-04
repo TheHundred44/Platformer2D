@@ -23,6 +23,7 @@ public class PlayrHP : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
     public Physics2D Physics2D;
+    public PlayerLook _playerLook;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class PlayrHP : MonoBehaviour
         //sliderHealth.value = hp;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        //_playerLook = GetComponent<PlayerLook>();
     }
 
     private void Update()
@@ -86,9 +88,10 @@ public class PlayrHP : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
             _canvaLose.SetActive(true);
+            _playerLook.DesactiveMouseLocked();
+            Time.timeScale = 0;
+            _canvaInGame.SetActive(false);
         }
     }
 
