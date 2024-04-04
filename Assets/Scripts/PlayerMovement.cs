@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _horizontalMove;
 
     private SpriteRenderer _spriteRenderer;
+    private PlayerJump _playerJump;
+
+    [SerializeField] private ParticleSystem _particleSystem;
+
 
     private void Start()
     {
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _horizontalMove = transform.position;
+        _playerJump = GetComponent<PlayerJump>();
     }
 
     // Méthode pour que le joueur puisse bouger
@@ -26,7 +31,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _horizontalMove = _input.actions.FindAction("Move").ReadValue<Vector2>();
         transform.position += new Vector3(_horizontalMove.x, 0, 0) * Time.deltaTime * _speed;
-        Debug.Log(_horizontalMove.x);
+        if(!_playerJump._isJumping)
+        {
+            PlayDust();
+        }
     }
 
     private void FixedUpdate()
@@ -43,5 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
         // La méthode OnMove() est mis dans un FixedUpdate pour que les movements du joueurs soient fluides
         OnMove();
+    }
+
+    private void PlayDust()
+    {
+        _particleSystem.Play();
     }
 }

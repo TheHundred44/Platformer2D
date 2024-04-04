@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
 
     private PlayerInput _playerInput;
 
-    private bool _isJumping;
+    public bool _isJumping;
 
     [SerializeField] private ParticleSystem _particleSystem;
 

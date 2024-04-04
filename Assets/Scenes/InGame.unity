@@ -974,7 +974,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1049218203}
   m_Father: {fileID: 1616677858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &111494266
@@ -6113,6 +6114,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2006491783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1049218203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+  m_PrefabInstance: {fileID: 1554982525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1049218205 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7954764613962266614, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+  m_PrefabInstance: {fileID: 1554982525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053718790
 GameObject:
   m_ObjectHideFlags: 0
@@ -9581,6 +9592,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2006491783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1554982525
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 106298047}
+    m_Modifications:
+    - target: {fileID: 532434550538833299, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580235956655021984, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_Name
+      value: Dust (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667473257071054703, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954764613962266614, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 681c5795d580d5f4a84ed07cc0d36b69, type: 3}
 --- !u!1 &1561404545
 GameObject:
   m_ObjectHideFlags: 0
@@ -10071,6 +10147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boxCollider2D: {fileID: 106298046}
+  _isJumping: 0
   _particleSystem: {fileID: 656572532}
   _jumpforce: 15
 --- !u!114 &1616677853
@@ -10085,6 +10162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9aeaaaebbed4b48a3a1c084f070ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 1049218205}
 --- !u!114 &1616677854
 MonoBehaviour:
   m_ObjectHideFlags: 0
