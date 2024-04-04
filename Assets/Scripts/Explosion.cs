@@ -72,8 +72,8 @@ public class Explosion : MonoBehaviour
                     _enemyHP.LowerHealth(DamageExplosion);
                 }
             }
-
         }
+
         yield return new WaitForSeconds(0.5f);
         Destroy(flamme);
     }
