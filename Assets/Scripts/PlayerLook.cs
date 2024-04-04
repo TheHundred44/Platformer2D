@@ -38,4 +38,10 @@ public class PlayerLook : MonoBehaviour
         yield return new WaitForSeconds(1);
         transform.position = new Vector3(0, 0, 0);
     }
+
+    public void DesactiveMouseLocked()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
