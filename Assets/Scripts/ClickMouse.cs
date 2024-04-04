@@ -78,9 +78,9 @@ public class ClickMouse : MonoBehaviour
 
     private void VerifStrengh()
     {
-        if (_explosion.ExplosionForce > 30)
+        if (_explosion.ExplosionForce > 50)
         {
-            _explosion.ExplosionForce = 30;
+            _explosion.ExplosionForce = 50;
         }
         if (_explosion.ExplosionRadius > 3)
         {

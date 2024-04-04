@@ -12,6 +12,9 @@ public class PlayerJump : MonoBehaviour
 
     private bool _isJumping;
 
+    [SerializeField]
+    private float _jumpforce = 10f;
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -23,7 +26,7 @@ public class PlayerJump : MonoBehaviour
         if (!_isJumping)
         {
             _isJumping = true;
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 10f);
+            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpforce);
         }
     }
 
