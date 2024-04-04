@@ -966,11 +966,12 @@ MonoBehaviour:
   ExplosionForce: 5
   UpwardsModifier: 2
   TimeDelay: 1.5
-  ExplosionPrefab: {fileID: 958935949}
-  Flammes: {fileID: 958935949}
+  ExplosionCharge: {fileID: 100010, guid: 4d0391f078db24fac9f5cba3075f9f5d, type: 3}
+  Explosions: {fileID: 100004, guid: a89abc0d2591545288f4c041059ae633, type: 3}
   PositionExplosion: {x: 0, y: 0, z: 0}
   PositionExplosion2D: {x: 0, y: 0}
   DamageExplosion: 50
+  _explosionShake: 0
 --- !u!4 &210814129
 Transform:
   m_ObjectHideFlags: 0
@@ -6854,6 +6855,7 @@ GameObject:
   - component: {fileID: 1111126881}
   - component: {fileID: 1111126880}
   - component: {fileID: 1111126879}
+  - component: {fileID: 1111126883}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6979,6 +6981,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1616677858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111126883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111126878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505a2959f8e75e541b25f349210c2120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.1
+  shakeAmount: 0.1
+  start: 0
+  _playerMovement: {fileID: 1616677853}
 --- !u!1 &1112705246
 GameObject:
   m_ObjectHideFlags: 0

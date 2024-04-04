@@ -11,35 +11,22 @@ public class ScreenShake : MonoBehaviour
 
     private Vector3 originalPosition;
 
+    [SerializeField] PlayerMovement _playerMovement;
+
     void Start()
     {
-        originalPosition = transform.localPosition;
+        originalPosition = new Vector3(_playerMovement.transform.localPosition.x, _playerMovement.transform.localPosition.y, -10);
     }
 
     private void Update()
     {
         if (start)
         {
+            originalPosition = new Vector3(_playerMovement.transform.localPosition.x, _playerMovement.transform.localPosition.y, -10);
             start = false;
             StartCoroutine(Shaking());
         }
     }
-
-    //public void Shake(float duration)
-    //{
-    //    if (duration > 0)
-    //    {
-    //        for (float i = duration; i>0; i -= Time.deltaTime)
-    //        {
-    //            transform.localPosition = originalPosition + Random.insideUnitSphere * shakeAmount;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        shakeDuration = 0f;
-    //        transform.localPosition = originalPosition;
-    //    }
-    //}
 
     IEnumerator Shaking()
     {

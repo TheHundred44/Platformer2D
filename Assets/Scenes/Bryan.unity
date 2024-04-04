@@ -2569,7 +2569,7 @@ GameObject:
   - component: {fileID: 1275047592}
   - component: {fileID: 1275047591}
   m_Layer: 0
-  m_Name: Helath
+  m_Name: Health
   m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
