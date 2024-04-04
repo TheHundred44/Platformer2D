@@ -8,56 +8,44 @@ public class Explosion : MonoBehaviour
     public float ExplosionForce = 300f;
     public float UpwardsModifier = 2.0f;
     public float TimeDelay = 1.5f;
-    public GameObject ExplosionPrefab;
-    public GameObject Flammes;
+    public GameObject ExplosionCharge;
+    public GameObject Explosions;
 
     public Vector3 PositionExplosion;
     public Vector2 PositionExplosion2D;
     public float DamageExplosion = 50;
 
     private EnemyHp _enemyHP;
+    private ClickMouse _clickMouse;
+
+    private GameObject _explosion;
+    private ScreenShake _screenShake;
+
+    public float _explosionShake;
+
+    private void Awake()
+    {
+        _clickMouse = FindAnyObjectByType<ClickMouse>().GetComponent<ClickMouse>();
+        _screenShake = FindAnyObjectByType<ScreenShake>().GetComponent<ScreenShake>();
+    }
 
     public void Fire()
     {
         StartCoroutine(Explode());
     }
 
-    //IEnumerator Explode()
-    //{
-    //    yield return new WaitForSeconds(TimeDelay);
-
-    //    GameObject explosion = Instantiate(ExplosionPrefab, PositionExplosion, Quaternion.identity);
-    //    GameObject flamme = Instantiate(Flammes, PositionExplosion, Quaternion.identity);
-
-    //    Vector3 explosionPosition = PositionExplosion;
-    //    Collider[] colliders = Physics.OverlapSphere(explosionPosition, ExplosionRadius);
-
-    //    foreach (Collider collider in colliders)
-    //    {
-    //        Rigidbody rb = collider.GetComponent<Rigidbody>();
-
-    //        if(rb != null)
-    //        {
-    //            rb.AddExplosionForce(ExplosionForce, explosionPosition, ExplosionRadius, UpwardsModifier);
-    //            if(rb.tag == "Enemy")
-    //            {
-    //                _enemyHP.LowerHealth(DamageExplosion);
-    //            }
-    //        }
-
-    //    }
-    //    yield return new WaitForSeconds(0.5f);
-    //    Destroy(explosion);
-    //    Destroy(flamme);
-
-    //}
+    public void Charge()
+    {
+        _explosion = Instantiate(ExplosionCharge, PositionExplosion, Quaternion.identity);
+    }
 
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(TimeDelay);
-
-        GameObject explosion = Instantiate(ExplosionPrefab, PositionExplosion, Quaternion.identity);
-        GameObject flamme = Instantiate(Flammes, PositionExplosion, Quaternion.identity);
+        Destroy(_explosion);
+        GameObject flamme = Instantiate(Explosions, PositionExplosion, Quaternion.identity);
+        _screenShake.start = true;
+        _screenShake.shakeAmount = _explosionShake;
 
         Vector2 explosionPosition = PositionExplosion;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPosition, ExplosionRadius);
@@ -68,8 +56,6 @@ public class Explosion : MonoBehaviour
 
             if (rb != null)
             {
-                //rb.AddExplosionForce(ExplosionForce, explosionPosition, ExplosionRadius, UpwardsModifier);
-                //rb.AddForce(explosionPosition, ForceMode2D.Impulse);
                 Vector2 rbPosition = new Vector2(rb.transform.position.x, rb.transform.position.y);
                 Vector2 direction = rbPosition - explosionPosition;
                 float distance = direction.magnitude;
@@ -85,8 +71,6 @@ public class Explosion : MonoBehaviour
 
         }
         yield return new WaitForSeconds(0.5f);
-        Destroy(explosion);
         Destroy(flamme);
-
     }
 }
