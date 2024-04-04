@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ClickMouse : MonoBehaviour
 {
-    private Explosion _explosion;
+    public Explosion _explosion;
     private float clickStartTime;
     private float clickEndTime;
 
@@ -68,6 +68,7 @@ public class ClickMouse : MonoBehaviour
             _explosion.Fire();
             _isMousePressed = false;
             await Task.Delay(500);
+            _target.transform.position = transform.position;
         }
     }
 
