@@ -60,6 +60,10 @@ public class Explosion : MonoBehaviour
                 Vector2 direction = rbPosition - explosionPosition;
                 float distance = direction.magnitude;
                 float forceMagnitude = Mathf.Lerp(ExplosionForce, 0, distance / ExplosionRadius);
+                Debug.Log(forceMagnitude);
+                Debug.Log(forceMagnitude * direction.magnitude);
+                Debug.Log(rb.gameObject.name);
+
                 rb.AddForce(direction.normalized * forceMagnitude, ForceMode2D.Impulse);
 
                 if (rb.tag == "Enemy")
