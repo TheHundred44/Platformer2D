@@ -7,20 +7,39 @@ public class PlayerMovement : MonoBehaviour
 
     private float _speed = 10f;
 
+    private Animator _animator;
+
+    private Vector2 _horizontalMove;
+
+    private SpriteRenderer _spriteRenderer;
+
     private void Start()
     {
         _input = GetComponent<PlayerInput>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _horizontalMove = transform.position;
     }
 
     // Méthode pour que le joueur puisse bouger
     private void OnMove()
     {
-        Vector2 direction = _input.actions.FindAction("Move").ReadValue<Vector2>();
-        transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * _speed;
+        _horizontalMove = _input.actions.FindAction("Move").ReadValue<Vector2>();
+        transform.position += new Vector3(_horizontalMove.x, 0, 0) * Time.deltaTime * _speed;
+        if (_horizontalMove.x == -1)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
+        }
     }
 
     private void FixedUpdate()
     {
+        _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove.x));
+        
         // La méthode OnMove() est mis dans un FixedUpdate pour que les movements du joueurs soient fluides
         OnMove();
     }

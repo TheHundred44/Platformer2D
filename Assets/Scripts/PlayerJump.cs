@@ -15,16 +15,20 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]
     private float _jumpforce = 10f;
 
+    private Animator _animator;
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
+        _animator = GetComponent<Animator>();
     }
 
     public void OnJump()
     {
         if (!_isJumping)
         {
+            _animator.SetBool("IsJumping", true);
             _isJumping = true;
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpforce);
         }
@@ -43,6 +47,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.tag == "Sol")
         {
             _isJumping = true;
+            _animator.SetBool("IsJumping", false);
         }
     }
 
