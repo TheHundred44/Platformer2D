@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
     {
         _horizontalMove = _input.actions.FindAction("Move").ReadValue<Vector2>();
         transform.position += new Vector3(_horizontalMove.x, 0, 0) * Time.deltaTime * _speed;
+
+    }
+
+    private void FixedUpdate()
+    {
+        _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove.x));
         if (_horizontalMove.x == -1)
         {
             _spriteRenderer.flipX = true;
@@ -34,12 +40,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove.x));
-        
         // La méthode OnMove() est mis dans un FixedUpdate pour que les movements du joueurs soient fluides
         OnMove();
     }
