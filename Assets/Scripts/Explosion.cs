@@ -21,6 +21,8 @@ public class Explosion : MonoBehaviour
     private GameObject _explosion;
     private ScreenShake _screenShake;
 
+    public float _explosionShake;
+
     private void Awake()
     {
         _clickMouse = FindAnyObjectByType<ClickMouse>().GetComponent<ClickMouse>();
@@ -42,7 +44,8 @@ public class Explosion : MonoBehaviour
         yield return new WaitForSeconds(TimeDelay);
         Destroy(_explosion);
         GameObject flamme = Instantiate(Explosions, PositionExplosion, Quaternion.identity);
-        _screenShake.Shake();
+        _screenShake.start = true;
+        _screenShake.shakeAmount = _explosionShake;
 
         Vector2 explosionPosition = PositionExplosion;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPosition, ExplosionRadius);
