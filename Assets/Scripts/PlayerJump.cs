@@ -12,6 +12,8 @@ public class PlayerJump : MonoBehaviour
 
     private bool _isJumping;
 
+    [SerializeField] private ParticleSystem _particleSystem;
+
     [SerializeField]
     private float _jumpforce = 10f;
 
@@ -27,6 +29,7 @@ public class PlayerJump : MonoBehaviour
         {
             _isJumping = true;
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpforce);
+            PlayPArticleSystem();
         }
     }
 
@@ -49,5 +52,10 @@ public class PlayerJump : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);  
+    }
+
+    private void PlayPArticleSystem()
+    {
+        _particleSystem.Play();
     }
 }

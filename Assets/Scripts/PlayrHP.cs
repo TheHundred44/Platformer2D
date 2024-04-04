@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayrHP : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class PlayrHP : MonoBehaviour
 
     [SerializeField] private float hpMax = 3;
     [SerializeField] private float hp = 3;
-    public Slider sliderHealth;
+    //public Slider sliderHealth;
+    [SerializeField] float _fillSpeed;
+    [SerializeField] private Image _healthBarFill;
 
     private bool _canTakeDamage = true;
     private bool _enemyHere;
@@ -26,8 +29,8 @@ public class PlayrHP : MonoBehaviour
         Time.timeScale = 1;
 
         hp = hpMax;
-        sliderHealth.maxValue = hpMax;
-        sliderHealth.value = hp;
+        //sliderHealth.maxValue = hpMax;
+        //sliderHealth.value = hp;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -78,7 +81,8 @@ public class PlayrHP : MonoBehaviour
     private void HealthManager(float health)
     {
         hp += health;
-        sliderHealth.value = hp;
+        //sliderHealth.value = hp;
+        HealthBarUpdate();
 
         if (hp <= 0)
         {
@@ -86,6 +90,12 @@ public class PlayrHP : MonoBehaviour
             Time.timeScale = 0;
             _canvaLose.SetActive(true);
         }
+    }
+
+    private void HealthBarUpdate()
+    {
+        float targetFillAmount = hp / hpMax;
+        _healthBarFill.DOFillAmount(targetFillAmount, _fillSpeed);
     }
 
     private async void Invincibility()
@@ -99,7 +109,7 @@ public class PlayrHP : MonoBehaviour
             _spriteRenderer.color = Color.white;
             await Task.Delay(600);
         }
-        _spriteRenderer.color = new Color(1,0,0,1f);
+        _spriteRenderer.color = new Color(1,1,1,1f);
         Physics2D.IgnoreLayerCollision(6, 7, false);
         _canTakeDamage = true;        
     }
