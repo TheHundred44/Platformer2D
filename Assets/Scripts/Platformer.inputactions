@@ -218,7 +218,7 @@
                 {
                     "name": "",
                     "id": "d2d20421-6c0b-4828-af3d-00c20da4b530",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -250,8 +250,30 @@
                 },
                 {
                     "name": "",
+                    "id": "aac44521-096a-407f-888f-bfc4afd024dc",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Retry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8e8beef4-6f3d-4ea5-a8a4-c2c5c8deeb2c",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Options",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0cbf95b5-5a36-4259-a669-eb1c1b186595",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
