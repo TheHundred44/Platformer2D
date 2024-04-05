@@ -788,6 +788,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &39043119
 Rigidbody2D:
   serializedVersion: 4
@@ -1074,6 +1077,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &84377445
 Rigidbody2D:
   serializedVersion: 4
@@ -2845,6 +2851,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &331366331
 Rigidbody2D:
   serializedVersion: 4
@@ -3669,7 +3678,7 @@ MonoBehaviour:
   _textHit: {fileID: 12278772}
   _textTime: {fileID: 1226324877}
   _chronometer: {fileID: 1216700939}
-  _canvaIG: {fileID: 0}
+  _canvaIG: {fileID: 582586429}
 --- !u!4 &478476519
 Transform:
   m_ObjectHideFlags: 0
@@ -3802,6 +3811,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &491980792
 Rigidbody2D:
   serializedVersion: 4
@@ -34560,6 +34572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &987441586
 Rigidbody2D:
   serializedVersion: 4
@@ -35076,6 +35091,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1053752018
 Rigidbody2D:
   serializedVersion: 4
@@ -35287,6 +35305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1056181843
 Rigidbody2D:
   serializedVersion: 4
@@ -37610,6 +37631,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1326473360
 Rigidbody2D:
   serializedVersion: 4
@@ -42171,6 +42195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1865193092
 Rigidbody2D:
   serializedVersion: 4
@@ -42540,6 +42567,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1909710897
 Rigidbody2D:
   serializedVersion: 4
@@ -42782,6 +42812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1924190631
 Rigidbody2D:
   serializedVersion: 4
@@ -43151,6 +43184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1985581750
 Rigidbody2D:
   serializedVersion: 4
@@ -43452,6 +43488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &1986729366
 Rigidbody2D:
   serializedVersion: 4
@@ -44171,6 +44210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &2051509786
 Rigidbody2D:
   serializedVersion: 4
@@ -44540,6 +44582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 500
   _damageColor: {r: 0, g: 0, b: 0, a: 0}
+  _damageCollider: {fileID: 0}
+  _prefabExplosion: {fileID: 0}
+  _prefabSmoke: {fileID: 0}
 --- !u!50 &2097494444
 Rigidbody2D:
   serializedVersion: 4

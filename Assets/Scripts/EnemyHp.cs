@@ -19,9 +19,12 @@ public class EnemyHp : MonoBehaviour
 
     private EnnemyPatrol _enemyPatrol;
 
+    private ScoreManager _scoreManager;
+
     private void Start()
     {
         _enemyPatrol = GetComponent<EnnemyPatrol>();
+        _scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
     }
 
     public virtual void LowerHealth(float damage)
@@ -34,6 +37,7 @@ public class EnemyHp : MonoBehaviour
         if (_hp <= 0)
         {
             StartCoroutine(AnimationDeath());
+            _scoreManager.NbOfKill++;
         }
     }
 
