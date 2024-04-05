@@ -19,7 +19,10 @@ public class PlayerJump : MonoBehaviour
 
     private Animator _animator;
 
-    private void Start()
+    [SerializeField]
+    private AudioManager _audioManager;
+
+    private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
@@ -32,7 +35,8 @@ public class PlayerJump : MonoBehaviour
         {
             _animator.SetBool("IsJumping", true);
             _isJumping = true;
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpforce);
+            _audioManager.PlaySFX(_audioManager.JumpSound);
+            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpforce);          
             PlayPArticleSystem();
         }
     }

@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private ParticleSystem _particleSystem;
 
-
     private void Start()
     {
         _input = GetComponent<PlayerInput>();

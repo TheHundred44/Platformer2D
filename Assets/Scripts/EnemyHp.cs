@@ -21,6 +21,9 @@ public class EnemyHp : MonoBehaviour
 
     private ScoreManager _scoreManager;
 
+    [SerializeField]
+    private AudioManager _audioManager;
+
     private void Start()
     {
         _enemyPatrol = GetComponent<EnnemyPatrol>();
@@ -45,6 +48,7 @@ public class EnemyHp : MonoBehaviour
     {
         _prefabExplosion.Play();
         _prefabSmoke.Play();
+        _audioManager.PlaySFX(_audioManager.ExplosionAudioEnemy);
         _damageCollider.enabled = false;
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
