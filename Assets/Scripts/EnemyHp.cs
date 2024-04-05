@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyHp : MonoBehaviour
 {
@@ -8,6 +7,22 @@ public class EnemyHp : MonoBehaviour
 
     [SerializeField]
     private Color _damageColor;
+
+    [SerializeField]
+    private Collider2D _damageCollider;
+
+    [SerializeField]
+    private ParticleSystem _prefabExplosion;
+
+    [SerializeField]
+    private ParticleSystem _prefabSmoke;
+
+    private EnnemyPatrol _enemyPatrol;
+
+    private void Start()
+    {
+        _enemyPatrol = GetComponent<EnnemyPatrol>();
+    }
 
     public virtual void LowerHealth(float damage)
     {
@@ -18,8 +33,16 @@ public class EnemyHp : MonoBehaviour
 
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(AnimationDeath());
         }
     }
-    //other.gameObject.SendMessage("LowerHealth", damage, SendMessageOptions.DontRequireReceiver);
+
+    private IEnumerator AnimationDeath()
+    {
+        _prefabExplosion.Play();
+        _prefabSmoke.Play();
+        _damageCollider.enabled = false;
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }   
 }
