@@ -17,7 +17,10 @@ public class ClickMouse : MonoBehaviour
     [SerializeField]
     private GameObject _target;
 
-    [SerializeField] private SpriteRenderer Cursor; 
+    [SerializeField] private SpriteRenderer Cursor;
+
+    [SerializeField]
+    private AudioManager _audioManager;
 
     private void Start()
     {
@@ -69,6 +72,7 @@ public class ClickMouse : MonoBehaviour
             clickEndTime = Time.time - clickStartTime;
             _explosion.TimeDelay = 0;
             _explosion.Fire();
+            _audioManager.PlaySFX(_audioManager.ExlposionAudio);
             _isMousePressed = false;
             await Task.Delay(500);
             //_target.transform.position = transform.position;

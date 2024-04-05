@@ -246,6 +246,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 4953718589305809654}
   _prefabExplosion: {fileID: 4248154877583684758}
   _prefabSmoke: {fileID: 4282940645955348485}
+  _audioManager: {fileID: 2479142107522487913, guid: a3048ee36dc473e49920e22164fea402, type: 3}
 --- !u!61 &4953718589305809654
 BoxCollider2D:
   m_ObjectHideFlags: 0
