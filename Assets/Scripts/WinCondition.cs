@@ -5,6 +5,8 @@ using UnityEngine;
 public class WinCondition : MonoBehaviour
 {
     public GameObject CanvaWin;
+    public PlayerLook PlayerLook;
+    public ScreenShake ScreenShake;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,6 +14,8 @@ public class WinCondition : MonoBehaviour
         {
             Time.timeScale = 0f;
             CanvaWin.SetActive(true);
+            PlayerLook.DesactiveMouseLocked();
+            
         }
     }
 }
