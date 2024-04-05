@@ -7,7 +7,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField]
     private PlayerInput _playerInput;
 
-    private float _sensibility = 5f;
+    private float _sensibility = 12.5f;
 
     public ClickMouse _clickMouse;
 
@@ -35,7 +35,7 @@ public class PlayerLook : MonoBehaviour
 
     private IEnumerator MousePoint()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.25f);
         transform.position = new Vector3(0, 0, 0);
     }
 
