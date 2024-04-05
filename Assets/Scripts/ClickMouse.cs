@@ -71,7 +71,7 @@ public class ClickMouse : MonoBehaviour
             _explosion.Fire();
             _isMousePressed = false;
             await Task.Delay(500);
-            _target.transform.position = transform.position;
+            //_target.transform.position = transform.position;
             Cursor.color = Color.black;
             Cursor.gameObject.transform.localScale = new Vector3(0.3685f, 0.3685f, 0.3685f);
         }
