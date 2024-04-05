@@ -35,7 +35,7 @@ public class PlayerLook : MonoBehaviour
 
     private IEnumerator MousePoint()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         transform.position = new Vector3(0, 0, 0);
     }
 
