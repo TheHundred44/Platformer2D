@@ -15,7 +15,7 @@ public class WinCondition : MonoBehaviour
             Time.timeScale = 0f;
             CanvaWin.SetActive(true);
             PlayerLook.DesactiveMouseLocked();
-            
+            ScreenShake.gameObject.SetActive(false);
         }
     }
 }

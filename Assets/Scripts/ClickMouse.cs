@@ -17,6 +17,8 @@ public class ClickMouse : MonoBehaviour
     [SerializeField]
     private GameObject _target;
 
+    [SerializeField] private SpriteRenderer Cursor; 
+
     private void Start()
     {
         _explosion = FindAnyObjectByType<Explosion>().GetComponent<Explosion>();
@@ -38,6 +40,7 @@ public class ClickMouse : MonoBehaviour
                 _explosion.ExplosionForce += 0.1f;
                 _explosion.DamageExplosion += 1;
             }
+            Cursor.gameObject.transform.localScale = new Vector3(0.2685f, 0.2685f, 0.2685f);
             _explosion.ExplosionRadius += 0.0050f;
             _explosion._explosionShake += 0.0033f;
             VerifStrengh();
@@ -69,6 +72,8 @@ public class ClickMouse : MonoBehaviour
             _isMousePressed = false;
             await Task.Delay(500);
             _target.transform.position = transform.position;
+            Cursor.color = Color.black;
+            Cursor.gameObject.transform.localScale = new Vector3(0.3685f, 0.3685f, 0.3685f);
         }
     }
 
@@ -77,6 +82,7 @@ public class ClickMouse : MonoBehaviour
         if (_explosion.ExplosionForce > 50)
         {
             _explosion.ExplosionForce = 50;
+            Cursor.color = Color.red;
         }
         if (_explosion.ExplosionRadius > 5)
         {
