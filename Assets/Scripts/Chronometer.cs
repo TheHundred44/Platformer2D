@@ -5,7 +5,7 @@ using TMPro;
 
 public class Chronometer : MonoBehaviour
 {
-    private float timer;
+    public float Timer;
     private int minutes;
     private int seconds;
     private int milliseconds;
@@ -14,18 +14,18 @@ public class Chronometer : MonoBehaviour
 
     void Start()
     {
-        timer = 0f;
+        Timer = 0f;
         minutes = 0;
         seconds = 0;
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
+        Timer += Time.deltaTime;
 
-        minutes = (int)(timer / 60);
-        seconds = (int)(timer % 60);
-        milliseconds = (int)((timer * 1000) % 1000);
+        minutes = (int)(Timer / 60);
+        seconds = (int)(Timer % 60);
+        milliseconds = (int)((Timer * 1000) % 1000);
 
         TimerText.text = "" + minutes.ToString("00") + " : " + seconds.ToString("00") + " : " + milliseconds.ToString("000");
     }

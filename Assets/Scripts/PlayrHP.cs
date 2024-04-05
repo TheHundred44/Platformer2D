@@ -25,6 +25,8 @@ public class PlayrHP : MonoBehaviour
     public Physics2D Physics2D;
     public PlayerLook _playerLook;
 
+    public ScoreManager ScoreManager;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -43,6 +45,7 @@ public class PlayrHP : MonoBehaviour
         {
             float damage = -1;
             HealthManager(damage);
+            ScoreManager.NbOfhit++;
 
             if(hp > 0)
             {

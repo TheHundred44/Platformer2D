@@ -1969,6 +1969,7 @@ MonoBehaviour:
   CanvaWin: {fileID: 1562650204}
   PlayerLook: {fileID: 1059925439}
   ScreenShake: {fileID: 1111126883}
+  ScoreManager: {fileID: 478476518}
 --- !u!4 &250535352
 Transform:
   m_ObjectHideFlags: 0
@@ -3362,6 +3363,55 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006491783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &478476517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478476519}
+  - component: {fileID: 478476518}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &478476518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478476517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6174cb3dc060b2949bcc79387b89b97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NbOfKill: 0
+  NbOfhit: 0
+  ScoreOfTime: 0
+  _text: {fileID: 27631386}
+  _chronometer: {fileID: 1216700939}
+--- !u!4 &478476519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478476517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1137.9911, y: 511.23853, z: 5.3608727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491980787
 GameObject:
@@ -36429,6 +36479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a628560aa1cf443965803199a31403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: 0
   TimerText: {fileID: 516364221}
 --- !u!4 &1216700940
 Transform:
@@ -39339,6 +39390,7 @@ MonoBehaviour:
   _iFrameDuration: 2
   _numberOfFlash: 3
   _playerLook: {fileID: 1059925439}
+  ScoreManager: {fileID: 478476518}
 --- !u!114 &1616677852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44145,3 +44197,4 @@ SceneRoots:
   - {fileID: 210814129}
   - {fileID: 1601628437}
   - {fileID: 1517049746}
+  - {fileID: 478476519}

@@ -8,6 +8,8 @@ public class WinCondition : MonoBehaviour
     public PlayerLook PlayerLook;
     public ScreenShake ScreenShake;
 
+    public ScoreManager ScoreManager;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -16,6 +18,7 @@ public class WinCondition : MonoBehaviour
             CanvaWin.SetActive(true);
             PlayerLook.DesactiveMouseLocked();
             ScreenShake.gameObject.SetActive(false);
+            ScoreManager.CalculScore();
         }
     }
 }
