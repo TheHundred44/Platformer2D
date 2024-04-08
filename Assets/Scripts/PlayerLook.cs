@@ -11,12 +11,19 @@ public class PlayerLook : MonoBehaviour
 
     public ClickMouse _clickMouse;
 
+    private bool isBlocked = false; // Indique si le curseur est bloqué
+    private Rigidbody2D rb; // Référence au composant Rigidbody2D
+    public float repulsionForce = 5f; // Force de repoussement
+
     private void Start()
     {
         StartCoroutine(MousePoint());
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        rb = GetComponent<Rigidbody2D>(); // Récupérer le composant Rigidbody2D
+
     }
 
     private void OnLook()
@@ -27,9 +34,13 @@ public class PlayerLook : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_clickMouse._isMousePressed)
+
+        if (!isBlocked)
         {
-            OnLook();
+            if (!_clickMouse._isMousePressed)
+            {
+                OnLook();
+            }
         }
     }
 
@@ -43,5 +54,43 @@ public class PlayerLook : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Collision"))
+        {
+            // Le curseur est entré en collision avec la zone bloquante
+            isBlocked = true;
+            Debug.Log(isBlocked);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Collision"))
+        {
+            // Le curseur reste en collision avec la zone bloquante
+            // Empêcher le curseur de pénétrer dans la zone
+
+            // Calculer la direction de repoussement (de la zone vers le curseur)
+            Vector2 pushDirection = ((Vector2)transform.position - (Vector2)other.transform.position).normalized;
+
+            // Calculer la distance entre le curseur et la bordure de la zone
+            float distanceToEdge = other.bounds.extents.magnitude + GetComponent<Collider2D>().bounds.extents.magnitude;
+
+            // Déplacer le curseur vers l'extérieur de la zone
+            transform.position = (Vector2)other.transform.position + pushDirection * distanceToEdge;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Collision"))
+        {
+            // Le curseur a quitté la zone bloquante
+            isBlocked = false;
+            Debug.Log(isBlocked);
+        }
     }
 }

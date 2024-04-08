@@ -19,8 +19,8 @@ TagManager:
   - Enemy
   - Player
   - Platform
-  - 
-  - 
+  - Cursor
+  - Collision
   - 
   - 
   - 
