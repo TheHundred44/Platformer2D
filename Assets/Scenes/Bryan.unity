@@ -791,6 +791,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &39043119
 Rigidbody2D:
   serializedVersion: 4
@@ -1080,6 +1081,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &84377445
 Rigidbody2D:
   serializedVersion: 4
@@ -2854,6 +2856,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &331366331
 Rigidbody2D:
   serializedVersion: 4
@@ -3814,6 +3817,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &491980792
 Rigidbody2D:
   serializedVersion: 4
@@ -34575,6 +34579,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &987441586
 Rigidbody2D:
   serializedVersion: 4
@@ -35094,6 +35099,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1053752018
 Rigidbody2D:
   serializedVersion: 4
@@ -35308,6 +35314,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1056181843
 Rigidbody2D:
   serializedVersion: 4
@@ -35434,6 +35441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 1616677854}
   _clickMouse: {fileID: 1616677850}
+  repulsionForce: 5
+  _camera: {fileID: 0}
 --- !u!212 &1059925440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37634,6 +37643,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1326473360
 Rigidbody2D:
   serializedVersion: 4
@@ -39803,6 +39813,7 @@ MonoBehaviour:
   _playerInput: {fileID: 1616677854}
   _target: {fileID: 1059925438}
   Cursor: {fileID: 1059925440}
+  _audioManager: {fileID: 0}
 --- !u!114 &1616677851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39841,6 +39852,7 @@ MonoBehaviour:
   _isJumping: 0
   _particleSystem: {fileID: 656572532}
   _jumpforce: 15
+  _audioManager: {fileID: 0}
 --- !u!114 &1616677853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42198,6 +42210,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1865193092
 Rigidbody2D:
   serializedVersion: 4
@@ -42570,6 +42583,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1909710897
 Rigidbody2D:
   serializedVersion: 4
@@ -42815,6 +42829,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1924190631
 Rigidbody2D:
   serializedVersion: 4
@@ -43187,6 +43202,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1985581750
 Rigidbody2D:
   serializedVersion: 4
@@ -43491,6 +43507,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &1986729366
 Rigidbody2D:
   serializedVersion: 4
@@ -44213,6 +44230,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &2051509786
 Rigidbody2D:
   serializedVersion: 4
@@ -44585,6 +44603,7 @@ MonoBehaviour:
   _damageCollider: {fileID: 0}
   _prefabExplosion: {fileID: 0}
   _prefabSmoke: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!50 &2097494444
 Rigidbody2D:
   serializedVersion: 4
