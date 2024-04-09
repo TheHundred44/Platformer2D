@@ -18,8 +18,9 @@ public class Explosion : MonoBehaviour
     private EnemyHp _enemyHP;
     private ClickMouse _clickMouse;
 
-    private GameObject _explosion;
+    public GameObject ExplosionChargeGameObject;
     private ScreenShake _screenShake;
+    public bool IsDestroy = false;
 
     public float _explosionShake;
 
@@ -36,13 +37,17 @@ public class Explosion : MonoBehaviour
 
     public void Charge()
     {
-        _explosion = Instantiate(ExplosionCharge, PositionExplosion, Quaternion.identity);
+        ExplosionChargeGameObject = Instantiate(ExplosionCharge, PositionExplosion, Quaternion.identity);
     }
 
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(TimeDelay);
-        Destroy(_explosion);
+
+        if(!IsDestroy)
+        {
+            Destroy(ExplosionChargeGameObject);
+        }
         GameObject flamme = Instantiate(Explosions, PositionExplosion, Quaternion.identity);
         _screenShake.start = true;
         _screenShake.shakeAmount = _explosionShake;

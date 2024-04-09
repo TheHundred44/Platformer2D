@@ -44,7 +44,6 @@ public class PlayerLook : MonoBehaviour
     private void FixedUpdate()
     {
         CalculCamera();
-        Debug.Log(minX);
         Vector3 v3 = transform.position;
         v3.x = Mathf.Clamp(v3.x, minX, maxX);
         v3.y = Mathf.Clamp(v3.y, minY, maxY);

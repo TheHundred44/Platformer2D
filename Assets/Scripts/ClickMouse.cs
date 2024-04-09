@@ -43,6 +43,7 @@ public class ClickMouse : MonoBehaviour
                 _explosion.ExplosionForce += 0.1f;
                 _explosion.DamageExplosion += 1;
             }
+
             Cursor.gameObject.transform.localScale = new Vector3(0.2685f, 0.2685f, 0.2685f);
             _explosion.ExplosionRadius += 0.0050f;
             _explosion._explosionShake += 0.0033f;
@@ -87,16 +88,20 @@ public class ClickMouse : MonoBehaviour
         {
             _explosion.ExplosionForce = 50;
             Cursor.color = Color.red;
+            Destroy(_explosion.ExplosionChargeGameObject);
         }
+
         if (_explosion.ExplosionRadius > 5)
         {
             _explosion.ExplosionRadius = 5;
         }
+
         if (_explosion.DamageExplosion > 500)
         {
             _explosion.DamageExplosion = 500;
         }
-        if(_explosion._explosionShake > 1f)
+
+        if (_explosion._explosionShake > 1f)
         {
             _explosion._explosionShake = 1f;
         }
