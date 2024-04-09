@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip JumpSound;
     public AudioClip ExlposionAudio;
     public AudioClip ExplosionAudioEnemy;
+    public AudioClip PlayerHit;
 
     private void Start()
     {
