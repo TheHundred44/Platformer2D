@@ -1,0 +1,9 @@
+Screenshake des explosions
+Particules de poussières
+Vapeur qui bouge
+Trainée quand on bouge
+Poussière lorsque le joueur marche ou saute
+Explosions des ennemis lors de leur mort
+Chargement du tir -> viseur change de taille pour charger -> devient rouge au max -> explosion
+Son lors des explosions, des dégats pris, lorsqu'on clique sur un bouton, quand le chargement de l'explosion est au max, ambiance
+VFX pour le chargement de l'explosion
