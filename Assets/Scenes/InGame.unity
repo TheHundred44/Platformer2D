@@ -38835,6 +38835,7 @@ MonoBehaviour:
   _numberOfFlash: 3
   _playerLook: {fileID: 1059925439}
   ScoreManager: {fileID: 478476518}
+  AudioManager: {fileID: 349008555}
 --- !u!114 &1616677852
 MonoBehaviour:
   m_ObjectHideFlags: 0

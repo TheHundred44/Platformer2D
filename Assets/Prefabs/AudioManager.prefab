@@ -52,6 +52,7 @@ MonoBehaviour:
   JumpSound: {fileID: 8300000, guid: b64d938c08305274cb90e79b3b1ccfa5, type: 3}
   ExlposionAudio: {fileID: 8300000, guid: c3a39b0eff2992e49b02d3af5b187fdf, type: 3}
   ExplosionAudioEnemy: {fileID: 8300000, guid: 2ab43732506fb144bbcdc4718057a493, type: 3}
+  PlayerHit: {fileID: 8300000, guid: 5926fed3b0e52f24983a3cc88587a3ec, type: 3}
 --- !u!1 &3175326422190655844
 GameObject:
   m_ObjectHideFlags: 0

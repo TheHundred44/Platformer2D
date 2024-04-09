@@ -27,6 +27,8 @@ public class PlayrHP : MonoBehaviour
 
     public ScoreManager ScoreManager;
 
+    public AudioManager AudioManager;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -43,6 +45,7 @@ public class PlayrHP : MonoBehaviour
     {
         if (_enemyHere && _canTakeDamage)
         {
+            AudioManager.PlaySFX(AudioManager.PlayerHit);
             float damage = -1;
             HealthManager(damage);
             ScoreManager.NbOfhit++;
