@@ -73,7 +73,6 @@ public class PlayerLook : MonoBehaviour
     public void CalculCamera()
     {
         float vertExtent = _camera.orthographicSize;
-        Debug.Log("Cam " + _camera.orthographicSize);
         float horzExtent = vertExtent * Screen.width / Screen.height;
 
         float mapXFloat = (float)mapX;
