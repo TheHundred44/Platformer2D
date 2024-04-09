@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
@@ -13,9 +11,10 @@ public class Platform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
-            _playrHP.LayerIgnore(7,8,true);
+            _playrHP.LayerIgnore(7, 8, true);
+            Debug.Log("oui");
         }
     }
 
@@ -24,6 +23,7 @@ public class Platform : MonoBehaviour
         if (collision.tag == "Player")
         {
             _playrHP.LayerIgnore(7, 8, false);
+            Debug.Log("non");
         }
     }
 }

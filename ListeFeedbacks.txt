@@ -7,3 +7,4 @@ Explosions des ennemis lors de leur mort
 Chargement du tir -> viseur change de taille pour charger -> devient rouge au max -> explosion
 Son lors des explosions, des dégats pris, lorsqu'on clique sur un bouton, quand le chargement de l'explosion est au max, ambiance
 VFX pour le chargement de l'explosion
+Bar de vie qui descend progressivement lors de la prise de dégats + clignotement sur le joueur pour le moment d'invincibilité
