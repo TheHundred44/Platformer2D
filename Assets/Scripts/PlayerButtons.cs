@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerButtons : MonoBehaviour
 {
-    private PlayerInput _playerInput;
+    public PlayerInput _playerInput;
 
     [SerializeField] private GameObject _canvaOptions;
 
@@ -22,7 +22,7 @@ public class PlayerButtons : MonoBehaviour
 
     public void OnOptions()
     {
-        if(_canvaOptions.activeSelf)
+        if (_canvaOptions.activeSelf)
         {
             _canvaOptions.SetActive(true);
         }
