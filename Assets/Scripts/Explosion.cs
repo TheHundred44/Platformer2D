@@ -72,16 +72,6 @@ public class Explosion : MonoBehaviour
                 {
                     _enemyHP = rb.GetComponent<EnemyHp>();
                     _enemyHP.LowerHealth(DamageExplosion);
-                    Time.timeScale = 0.15f;
-                    yield return new WaitForSecondsRealtime(0.5f);
-                    Time.timeScale = 1.0f;
-                }
-
-                if (rb.tag == "Player")
-                {
-                    Time.timeScale = 0.15f;
-                    yield return new WaitForSecondsRealtime(0.5f);
-                    Time.timeScale = 1.0f;
                 }
             }
         }
