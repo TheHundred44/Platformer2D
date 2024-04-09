@@ -1734,7 +1734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &252659470
 Transform:
   m_ObjectHideFlags: 0
@@ -2578,7 +2578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &361199876
 Transform:
   m_ObjectHideFlags: 0
@@ -3587,7 +3587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &623985927
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34128,6 +34128,7 @@ MonoBehaviour:
   _playerInput: {fileID: 1616677854}
   _clickMouse: {fileID: 1616677850}
   repulsionForce: 5
+  _camera: {fileID: 1111126881}
 --- !u!212 &1059925440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34577,7 +34578,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.724871
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -42243,7 +42244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2020993870
 Transform:
   m_ObjectHideFlags: 0
