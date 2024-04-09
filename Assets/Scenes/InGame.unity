@@ -36564,7 +36564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189756522014929722, guid: 5e32cd947ec423c4d9d022592aaed292, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.53
+      value: -2.69
       objectReference: {fileID: 0}
     - target: {fileID: 5583165866969456105, guid: 5e32cd947ec423c4d9d022592aaed292, type: 3}
       propertyPath: _audioManager
@@ -36881,7 +36881,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1074125207678769370, guid: f8d365a9322a8ff4dacb57728b9fe42a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 1428806769472146313, guid: f8d365a9322a8ff4dacb57728b9fe42a, type: 3}
       propertyPath: m_Name
